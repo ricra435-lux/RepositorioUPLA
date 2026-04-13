@@ -2,27 +2,78 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Mi Portafolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio - UPLA</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
-        h1 { color: #2c3e50; }
-        .proyecto { background: #f4f4f4; padding: 15px; margin-bottom: 20px; border-radius: 5px; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0;
+            padding: 40px;
+            line-height: 1.6; 
+            background-color: #5d0e1e; /* Color Guindo */
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        h1 { 
+            color: #ffffff; 
+            text-align: center;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            border-bottom: 2px solid rgba(255,255,255,0.2);
+            padding-bottom: 10px;
+        }
+
+        .proyecto { 
+            background: rgba(255, 255, 255, 0.1); /* Casilla medio transparente */
+            backdrop-filter: blur(10px); /* Efecto de desenfoque */
+            padding: 25px; 
+            margin-bottom: 30px; 
+            border-radius: 15px; 
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .proyecto h3 {
+            margin-top: 0;
+            color: #ffdae0;
+        }
+
+        p {
+            font-size: 1.1em;
+        }
+
+        strong {
+            color: #ffdae0;
+        }
     </style>
 </head>
 <body>
-    <h1>¡Hola! Bienvenido a mi Portafolio</h1>
-    <p>Soy estudiante de 3er ciclo y aquí comparto mis proyectos de desarrollo.</p>
-    
-    <h2>Mis Proyectos</h2>
-    
-    <div class="proyecto">
-        <h3>Sistema de Mantenimiento Escolar</h3>
-        <p>Aplicación desarrollada utilizando <strong>Power Apps</strong> con almacenamiento de datos en <strong>SharePoint</strong>.</p>
-    </div>
-
-    <div class="proyecto">
-        <h3>Juego de Snake</h3>
-        <p>Clásico juego de la serpiente programado desde cero en <strong>Java</strong>.</p>
+    <div class="container">
+        <h1>Mi Portafolio Universitario</h1>
+        <p style="text-align: center;">Estudiante de 3er ciclo compartiendo mis avances y proyectos.</p>
+        
+        <h2>Mis Proyectos</h2>
+        
+        <div class="proyecto">
+            <h3>Sistema de Mantenimiento Escolar</h3>
+            <p>Este proyecto está guardado aquí en <strong>GitHub</strong>. Para mí como estudiante, GitHub es como una nube gigante (parecida a Google Drive) pero especial para mis códigos de la universidad.</p>
+            
+            <p><strong>¿Para qué me sirve?</strong> Me sirve para tener un respaldo seguro de mis tareas sin miedo a que se pierdan si mi laptop falla, y funciona como una vitrina para que otros vean lo que sé programar. Es mi carta de presentación para el futuro.</p>
+            
+            <p>Técnicamente, esta aplicación fue desarrollada con <strong>Power Apps</strong> y utiliza <strong>SharePoint</strong> para gestionar toda la información.</p>
+        </div>
     </div>
 </body>
 </html>
