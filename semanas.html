@@ -1,1 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio - UPLA</title>
+    <style>
+        /* --- ESTILOS DE LA BARRA DE NAVEGACIÓN --- */
+        .navbar {
+            width: 100%;
+            background-color: #ffffff; /* Color blanco sólido */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px; 
+            position: fixed; 
+            top: 0;
+            left: 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+            z-index: 1000;
+            box-sizing: border-box;
+        }
 
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-logo {
+            height: 80px; 
+            width: auto;
+        }
+
+        .nav-name {
+            color: #5d0e1e;
+            font-weight: 700;
+            font-size: 1.1em;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px; /* Espaciado uniforme entre los elementos del menú */
+        }
+
+        .nav-links a {
+            color: #000000;
+            text-decoration: none;
+            font-size: 1em;
+            font-weight: 600;
+            transition: color 0.3s ease; 
+        }
+
+        .nav-links a:hover {
+            color: #5d0e1e; 
+        }
+
+        /* --- ESTILOS DEL MENÚ DESPLEGABLE (DROPDOWN) --- */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* El contenedor de las semanas que estará oculto inicialmente */
+        .dropdown-content {
+            display: none; /* Oculto por defecto */
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 150px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.15);
+            border-radius: 8px;
+            top: 100%; /* Aparece justo debajo del texto */
+            left: 50%;
+            transform: translateX(-50%); /* Centra el menú bajo el botón */
+            padding: 10px 0;
+            z-index: 1001;
+        }
+
+        /* Estilos de los enlaces dentro del desplegable */
+        .dropdown-content a {
+            color: #333333;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: block; /* Para que ocupen todo el ancho y se pongan uno debajo de otro */
+            font-weight: 500;
+            font-size: 0.95em;
+            text-align: center;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        /* Efecto al pasar el cursor sobre las semanas específicas */
+        .dropdown-content a:hover {
+            background-color: #f9f9f9;
+            color: #5d0e1e;
+        }
+
+        /* Mostrar el menú cuando se hace hover sobre el contenedor principal */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* --- ESTILOS DEL CUERPO Y FONDO --- */
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0;
+            padding: 140px 40px 40px 40px; 
+            line-height: 1.6; 
+            background: linear-gradient(
+                rgba(93, 14, 30, 0.88),
+                rgba(93, 14, 30, 0.88)
+            ), 
+            url('https://upload.wikimedia.org/wikipedia/commons/5/50/Facultad_de_Ingenieria_UPLA.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        h1 { 
+            color: #ffffff; 
+            text-align: center;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-top: 0;
+        }
+
+        h2 {
+            border-bottom: 2px solid rgba(255,255,255,0.2);
+            padding-bottom: 10px;
+        }
+
+        .proyecto { 
+            background: rgba(255, 255, 255, 0.1); 
+            backdrop-filter: blur(10px); 
+            padding: 25px; 
+            margin-bottom: 30px; 
+            border-radius: 15px; 
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .proyecto h3 {
+            margin-top: 0;
+            color: #ffdae0;
+        }
+
+        p {
+            font-size: 1.1em;
+        }
+
+        strong {
+            color: #ffdae0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Logo_upla_vertical.jpg" alt="Logo UPLA" class="nav-logo">
+            <span class="nav-name">Alumno: Ricra Castillo Jhan Pool</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="#inicio">Inicio</a>
+            
+            <div class="dropdown">
+                <a href="#semanas" class="dropbtn">Semanas ▼</a>
+                <div class="dropdown-content">
+                    <a href="#semana1">Semana 1</a>
+                    <a href="#semana2">Semana 2</a>
+                    <a href="#semana3">Semana 3</a>
+                    <a href="#semana4">Semana 4</a>
+                    <a href="#semana5">Semana 5</a>
+                    <a href="#semana6">Semana 6</a>
+                    <a href="#semana7">Semana 7</a>
+                    <a href="#semana8">Semana 8</a>
+                </div>
+            </div>
+
+            <a href="#sobre-el-curso">Sobre el curso</a>
+            <a href="#conclusiones">Conclusiones</a>
+            <a href="#universidad">Universidad</a>
+        </div>
+    </nav>
+
+    <div class="container" id="inicio">
+        <h1>Mi Portafolio Universitario</h1>
+        <p style="text-align: center;">Estudiante compartiendo avances y proyectos.</p>
+        
+        <h2>Mis Proyectos</h2>
+        
+        <div class="proyecto">
+            <h3>Avances del taller: Desarrollo de Aplicaciones VII</h3>
+            <p>Este proyecto está guardado en <strong>GitHub</strong>. Para mí, GitHub es una plataforma fundamental donde puedo respaldar mis avances académicos de manera segura y profesional en la nube.</p>
+            
+            <p><strong>¿Para qué me sirve?</strong> Me permite tener un respaldo de mis tareas ante cualquier falla técnica y funciona como una vitrina para mostrar mis habilidades en programación. Es mi carta de presentación para el mundo laboral.</p>
+            
+            <p>Técnicamente, esta aplicación fue desarrollada con <strong>JavaScript</strong> y utiliza <strong>GitHub</strong> para la gestión de versiones.</p>
+        </div>
+    </div>
+</body>
+</html>
