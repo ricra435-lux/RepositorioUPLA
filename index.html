@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Portafolio - UPLA</title>
     <style>
+        /* --- ESTILOS DE LA BARRA DE NAVEGACIÓN --- */
         .navbar {
             width: 100%;
-            background-color: rgba(255, 255, 255, 0.8); 
-            backdrop-filter: blur(8px);
+            background-color: rgba(255, 255, 255, 0.85); 
+            backdrop-filter: blur(10px);
             display: flex;
-            justify-content: center; 
+            justify-content: space-between;
             align-items: center;
-            padding: 18px 40px;
+            padding: 10px 40px; /* Reducido un poco para que el logo luzca mejor */
             position: fixed; 
             top: 0;
             left: 0;
@@ -21,34 +22,56 @@
             box-sizing: border-box;
         }
 
-        .navbar a {
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-logo {
+            height: 60px; /* Aumentado para que el logo vertical se aprecie bien */
+            width: auto;
+        }
+
+        .nav-name {
+            color: #5d0e1e;
+            font-weight: 700;
+            font-size: 1.1em;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a {
             color: #000000;
             text-decoration: none;
-            margin: 0 20px;
-            font-size: 1.05em;
-            font-weight: 500;
+            margin-left: 25px;
+            font-size: 1em;
+            font-weight: 600;
             transition: color 0.3s ease; 
         }
 
-        .navbar a:hover {
+        .nav-links a:hover {
             color: #5d0e1e; 
         }
 
+        /* --- ESTILOS DEL CUERPO Y FONDO --- */
         body { 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
             margin: 0;
-            padding: 100px 40px 40px 40px; 
+            padding: 120px 40px 40px 40px; /* Ajustado el espacio superior */
             line-height: 1.6; 
             background: linear-gradient(
-                rgba(93, 14, 30, 0.85),
-                rgba(93, 14, 30, 0.85)
+                rgba(93, 14, 30, 0.88),
+                rgba(93, 14, 30, 0.88)
             ), 
             url('https://upload.wikimedia.org/wikipedia/commons/5/50/Facultad_de_Ingenieria_UPLA.jpg'); 
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            /* ---------------------------------------- */
-
             color: white;
             display: flex;
             flex-direction: column;
@@ -101,11 +124,18 @@
 </head>
 <body>
     <nav class="navbar">
-        <a href="#inicio">Inicio</a>
-        <a href="#semanas">Semanas</a>
-        <a href="#sobre-el-curso">Sobre el curso</a>
-        <a href="#conclusiones">Conclusiones</a>
-        <a href="#universidad">Universidad</a>
+        <div class="nav-brand">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Logo_upla_vertical.jpg" alt="Logo UPLA" class="nav-logo">
+            <span class="nav-name">Alumno: Ricra Castillo Jhan Pool</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="#inicio">Inicio</a>
+            <a href="#semanas">Semanas</a>
+            <a href="#sobre-el-curso">Sobre el curso</a>
+            <a href="#conclusiones">Conclusiones</a>
+            <a href="#universidad">Universidad</a>
+        </div>
     </nav>
 
     <div class="container" id="inicio">
@@ -116,11 +146,11 @@
         
         <div class="proyecto">
             <h3>Avances del taller: Desarrollo de Aplicaciones VII</h3>
-            <p>Este proyecto está guardado aquí en <strong>GitHub</strong>. Para mí como estudiante, GitHub es una plataforma donde pueda guardar mis avances como estudiante de manera segura podiendo tenerlo publicada en la nube siempre que yo me pueda registar en esta app</p>
+            <p>Este proyecto está guardado en <strong>GitHub</strong>. Para mí, GitHub es una plataforma fundamental donde puedo respaldar mis avances académicos de manera segura y profesional en la nube.</p>
             
-            <p><strong>¿Para qué me sirve?</strong> Me sirve para tener un respaldo seguro de mis tareas sin miedo a que se pierdan si mi laptop falla, y funciona como una vitrina para que otros vean lo que sé programar. Es mi carta de presentación para el futuro.</p>
+            <p><strong>¿Para qué me sirve?</strong> Me permite tener un respaldo de mis tareas ante cualquier falla técnica y funciona como una vitrina para mostrar mis habilidades en programación. Es mi carta de presentación para el mundo laboral.</p>
             
-            <p>Técnicamente, esta aplicación fue desarrollada con <strong>el lenguaje java script</strong> y utiliza <strong>github</strong> para gestionar toda la información.</p>
+            <p>Técnicamente, esta aplicación fue desarrollada con <strong>JavaScript</strong> y utiliza <strong>GitHub</strong> para la gestión de versiones.</p>
         </div>
     </div>
 </body>
