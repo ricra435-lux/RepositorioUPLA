@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Portafolio - UPLA</title>
     <style>
+        /* --- ESTILOS GENERALES Y DESPLAZAMIENTO SUAVE --- */
+        html {
+            scroll-behavior: smooth; /* Esto hace que el scroll sea animado al hacer clic en el menú */
+        }
+
         /* --- ESTILOS DE LA BARRA DE NAVEGACIÓN --- */
         .navbar {
             width: 100%;
-            background-color: #ffffff; /* Color blanco sólido */
+            background-color: #ffffff;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -42,7 +47,7 @@
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 25px; /* Espaciado uniforme entre los elementos del menú */
+            gap: 25px;
         }
 
         .nav-links a {
@@ -63,40 +68,36 @@
             display: inline-block;
         }
 
-        /* El contenedor de las semanas que estará oculto inicialmente */
         .dropdown-content {
-            display: none; /* Oculto por defecto */
+            display: none;
             position: absolute;
             background-color: #ffffff;
             min-width: 150px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.15);
             border-radius: 8px;
-            top: 100%; /* Aparece justo debajo del texto */
+            top: 100%;
             left: 50%;
-            transform: translateX(-50%); /* Centra el menú bajo el botón */
+            transform: translateX(-50%);
             padding: 10px 0;
             z-index: 1001;
         }
 
-        /* Estilos de los enlaces dentro del desplegable */
         .dropdown-content a {
             color: #333333;
             padding: 10px 20px;
             text-decoration: none;
-            display: block; /* Para que ocupen todo el ancho y se pongan uno debajo de otro */
+            display: block;
             font-weight: 500;
             font-size: 0.95em;
             text-align: center;
             transition: background-color 0.2s, color 0.2s;
         }
 
-        /* Efecto al pasar el cursor sobre las semanas específicas */
         .dropdown-content a:hover {
             background-color: #f9f9f9;
             color: #5d0e1e;
         }
 
-        /* Mostrar el menú cuando se hace hover sobre el contenedor principal */
         .dropdown:hover .dropdown-content {
             display: block;
         }
@@ -105,6 +106,7 @@
         body { 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
             margin: 0;
+            /* Se aumentó un poco el padding superior para evitar que el menú tape los títulos al navegar */
             padding: 140px 40px 40px 40px; 
             line-height: 1.6; 
             background: linear-gradient(
@@ -139,6 +141,7 @@
         h2 {
             border-bottom: 2px solid rgba(255,255,255,0.2);
             padding-bottom: 10px;
+            margin-top: 50px; /* Separación extra para los títulos principales */
         }
 
         .proyecto { 
@@ -149,6 +152,8 @@
             border-radius: 15px; 
             border: 1px solid rgba(255, 255, 255, 0.2);
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            /* Importante: Un pequeño margen superior invisible para que el menú fijo no tape el inicio del cuadro al hacer scroll con los enlaces */
+            scroll-margin-top: 120px; 
         }
 
         .proyecto h3 {
@@ -199,16 +204,15 @@
         <h1>Mi Portafolio Universitario</h1>
         <p style="text-align: center;">Estudiante compartiendo avances y proyectos.</p>
         
-        <h2>Mis Proyectos</h2>
+        <h2 id="semanas">Mis Proyectos por Semana</h2>
         
-        <div class="proyecto">
-            <h3>Avances del taller: Desarrollo de Aplicaciones VII</h3>
+        <div class="proyecto" id="semana1">
+            <h3>Semana 1: Configuración de Entorno</h3>
             <p>Este proyecto está guardado en <strong>GitHub</strong>. Para mí, GitHub es una plataforma fundamental donde puedo respaldar mis avances académicos de manera segura y profesional en la nube.</p>
-            
             <p><strong>¿Para qué me sirve?</strong> Me permite tener un respaldo de mis tareas ante cualquier falla técnica y funciona como una vitrina para mostrar mis habilidades en programación. Es mi carta de presentación para el mundo laboral.</p>
-            
             <p>Técnicamente, esta aplicación fue desarrollada con <strong>JavaScript</strong> y utiliza <strong>GitHub</strong> para la gestión de versiones.</p>
         </div>
-    </div>
-</body>
-</html>
+
+        <div class="proyecto" id="semana2">
+            <h3>Semana 2: Proyecto Web Interactivo</h3>
+            <p>En esta sesión nos enfocamos en la creación de un proyecto web estructurado. Como ejemplo práctico, desarrollé una interfaz
