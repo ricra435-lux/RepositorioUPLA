@@ -7,7 +7,7 @@
     <style>
         /* --- ESTILOS GENERALES Y DESPLAZAMIENTO SUAVE --- */
         html {
-            scroll-behavior: smooth; /* Esto hace que el scroll sea animado al hacer clic en el menú */
+            scroll-behavior: smooth; 
         }
 
         /* --- ESTILOS DE LA BARRA DE NAVEGACIÓN --- */
@@ -106,7 +106,6 @@
         body { 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
             margin: 0;
-            /* Se aumentó un poco el padding superior para evitar que el menú tape los títulos al navegar */
             padding: 140px 40px 40px 40px; 
             line-height: 1.6; 
             background: linear-gradient(
@@ -141,7 +140,7 @@
         h2 {
             border-bottom: 2px solid rgba(255,255,255,0.2);
             padding-bottom: 10px;
-            margin-top: 50px; /* Separación extra para los títulos principales */
+            margin-top: 50px; 
         }
 
         .proyecto { 
@@ -152,7 +151,6 @@
             border-radius: 15px; 
             border: 1px solid rgba(255, 255, 255, 0.2);
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-            /* Importante: Un pequeño margen superior invisible para que el menú fijo no tape el inicio del cuadro al hacer scroll con los enlaces */
             scroll-margin-top: 120px; 
         }
 
@@ -167,6 +165,15 @@
 
         strong {
             color: #ffdae0;
+        }
+
+        /* Estilos adicionales para listas dentro de proyectos */
+        .proyecto ul {
+            padding-left: 20px;
+        }
+        
+        .proyecto li {
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -207,12 +214,104 @@
         <h2 id="semanas">Mis Proyectos por Semana</h2>
         
         <div class="proyecto" id="semana1">
-            <h3>Semana 1: Configuración de Entorno</h3>
-            <p>Este proyecto está guardado en <strong>GitHub</strong>. Para mí, GitHub es una plataforma fundamental donde puedo respaldar mis avances académicos de manera segura y profesional en la nube.</p>
-            <p><strong>¿Para qué me sirve?</strong> Me permite tener un respaldo de mis tareas ante cualquier falla técnica y funciona como una vitrina para mostrar mis habilidades en programación. Es mi carta de presentación para el mundo laboral.</p>
-            <p>Técnicamente, esta aplicación fue desarrollada con <strong>JavaScript</strong> y utiliza <strong>GitHub</strong> para la gestión de versiones.</p>
-        </div>
+            <h3>Semana 1: Apache Maven</h3>
+            <p>La actividad consiste en implementar aplicaciones utilizando Apache Maven y documentar cada uno de los proyectos formulados.</p>
+            
+            <hr style="border: 1px solid rgba(255,255,255,0.2); margin: 20px 0;">
 
+            <h4>Enunciado 01: Venta de Camisas</h4>
+            <ul>
+                <li><strong>Enunciado del proyecto:</strong> Una tienda ha puesto en oferta la venta de camisas ofreciendo un descuento por temporada de verano denominado 7% + 7%. Se calcula el importe de compra, los descuentos sucesivos y el total a pagar.</li>
+                <li><strong>Diagrama de clases:</strong> 
+                    <br><em>[Añade tu imagen aquí: &lt;img src="tu_imagen.png"&gt;]</em>
+                </li>
+                <li><strong>Diseño de la aplicación:</strong>
+                    <br><em>[Añade captura de tu consola aquí]</em>
+                </li>
+                <li><strong>Código de la aplicación:</strong>
+                    <pre style="background: #2b2b2b; padding: 15px; border-radius: 8px; overflow-x: auto; color: #a9b7c6; font-family: monospace;"><code>import java.util.Scanner;
+
+public class VentaCamisas {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Entrada de datos
+        System.out.print("Ingrese el precio de la camisa: ");
+        double precio = scanner.nextDouble();
+        
+        System.out.print("Ingrese la cantidad adquirida: ");
+        int cantidad = scanner.nextInt();
+        
+        // Cálculos correspondientes
+        double importeCompra = precio * cantidad;
+        double primerDescuento = importeCompra * 0.07;
+        double segundoDescuento = (importeCompra - primerDescuento) * 0.07;
+        double descuentoTotal = primerDescuento + segundoDescuento;
+        double importePagar = importeCompra - descuentoTotal;
+        
+        // Salida de resultados
+        System.out.println("\n--- TICKET DE VENTA ---");
+        System.out.printf("Importe de la compra: S/ %.2f\n", importeCompra);
+        System.out.printf("Primer descuento (7%%): S/ %.2f\n", primerDescuento);
+        System.out.printf("Segundo descuento (7%%): S/ %.2f\n", segundoDescuento);
+        System.out.printf("Descuento total: S/ %.2f\n", descuentoTotal);
+        System.out.printf("Importe a pagar: S/ %.2f\n", importePagar);
+        
+        scanner.close();
+    }
+}</code></pre>
+                </li>
+            </ul>
+
+            <hr style="border: 1px solid rgba(255,255,255,0.2); margin: 20px 0;">
+
+            <h4>Enunciado 02: Presupuesto de Feria Empresarial</h4>
+            <ul>
+                <li><strong>Enunciado del proyecto:</strong> Una empresa expondrá sus productos en una feria. Dado un monto total a invertir, el programa determina cuánto gastará la empresa en cada rubro según porcentajes fijos (Alquiler 23%, Transporte 26%, Decoración 21%, etc.).</li>
+                <li><strong>Diagrama de clases:</strong> 
+                    <br><em>[Añade tu imagen aquí: &lt;img src="tu_imagen.png"&gt;]</em>
+                </li>
+                <li><strong>Diseño de la aplicación:</strong>
+                    <br><em>[Añade captura de tu consola aquí]</em>
+                </li>
+                <li><strong>Código de la aplicación:</strong>
+                    <pre style="background: #2b2b2b; padding: 15px; border-radius: 8px; overflow-x: auto; color: #a9b7c6; font-family: monospace;"><code>import java.util.Scanner;
+
+public class PresupuestoFeria {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Entrada de datos
+        System.out.print("Ingrese el monto total a invertir en la feria: S/ ");
+        double montoTotal = scanner.nextDouble();
+        
+        // Cálculos de distribución por rubro
+        double alquiler = montoTotal * 0.23;
+        double publicidad = montoTotal * 0.07;
+        double transporte = montoTotal * 0.26;
+        double servicios = montoTotal * 0.12;
+        double decoracion = montoTotal * 0.21;
+        double gastosVarios = montoTotal * 0.11;
+        
+        // Salida de resultados
+        System.out.println("\n--- DISTRIBUCIÓN DEL PRESUPUESTO ---");
+        System.out.printf("Alquiler de espacio (23%%): S/ %.2f\n", alquiler);
+        System.out.printf("Publicidad (7%%): S/ %.2f\n", publicidad);
+        System.out.printf("Transporte (26%%): S/ %.2f\n", transporte);
+        System.out.printf("Servicios feriales (12%%): S/ %.2f\n", servicios);
+        System.out.printf("Decoración (21%%): S/ %.2f\n", decoracion);
+        System.out.printf("Gastos varios (11%%): S/ %.2f\n", gastosVarios);
+        
+        scanner.close();
+    }
+}</code></pre>
+                </li>
+            </ul>
+        </div>
         <div class="proyecto" id="semana2">
             <h3>Semana 2: Proyecto Web Interactivo</h3>
-            <p>En esta sesión nos enfocamos en la creación de un proyecto web estructurado. Como ejemplo práctico, desarrollé una interfaz
+            <p>En esta sesión nos enfocamos en la creación de un proyecto web estructurado. Como ejemplo práctico, desarrollé una interfaz temática ("San Valentín") integrando <strong>HTML5, CSS3 y JavaScript</strong> para gestionar galerías de fotos y componentes animados.</p>
+        </div>
+        </div>
+</body>
+</html>
