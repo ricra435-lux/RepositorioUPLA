@@ -1,1 +1,30 @@
+import java.util.Scanner;
 
+public class PresupuestoFeria {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Entrada de datos
+        System.out.print("Ingrese el monto total a invertir en la feria: S/ ");
+        double montoTotal = scanner.nextDouble();
+        
+        // Cálculos de distribución por rubro según los porcentajes
+        double alquiler = montoTotal * 0.23;     // 23%
+        double publicidad = montoTotal * 0.07;   // 7%
+        double transporte = montoTotal * 0.26;   // 26%
+        double servicios = montoTotal * 0.12;    // 12%
+        double decoracion = montoTotal * 0.21;   // 21%
+        double gastosVarios = montoTotal * 0.11; // 11%
+        
+        // Salida de resultados
+        System.out.println("\n--- DISTRIBUCIÓN DEL PRESUPUESTO ---");
+        System.out.printf("Alquiler de espacio (23%%): S/ %.2f\n", alquiler);
+        System.out.printf("Publicidad (7%%): S/ %.2f\n", publicidad);
+        System.out.printf("Transporte (26%%): S/ %.2f\n", transporte);
+        System.out.printf("Servicios feriales (12%%): S/ %.2f\n", servicios);
+        System.out.printf("Decoración (21%%): S/ %.2f\n", decoracion);
+        System.out.printf("Gastos varios (11%%): S/ %.2f\n", gastosVarios);
+        
+        scanner.close();
+    }
+}
