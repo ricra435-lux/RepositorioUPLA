@@ -5,15 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Portafolio - UPLA</title>
     <style>
-        /* --- ESTILOS GENERALES Y DESPLAZAMIENTO SUAVE --- */
         html {
             scroll-behavior: smooth; 
         }
-
-        /* --- ESTILOS DE LA BARRA DE NAVEGACIÓN --- */
         .navbar {
             width: 100%;
-            background-color: #ffffff; /* Color blanco sólido */
+            background-color: #ffffff; 
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -47,7 +44,7 @@
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 25px; /* Espaciado uniforme entre los elementos del menú */
+            gap: 25px; 
         }
 
         .nav-links a {
@@ -61,52 +58,40 @@
         .nav-links a:hover {
             color: #5d0e1e; 
         }
-
-        /* --- ESTILOS DEL MENÚ DESPLEGABLE (DROPDOWN) --- */
         .dropdown {
             position: relative;
             display: inline-block;
         }
-
-        /* El contenedor de las semanas que estará oculto inicialmente */
         .dropdown-content {
-            display: none; /* Oculto por defecto */
+            display: none; 
             position: absolute;
             background-color: #ffffff;
             min-width: 150px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.15);
             border-radius: 8px;
-            top: 100%; /* Aparece justo debajo del texto */
+            top: 100%;
             left: 50%;
-            transform: translateX(-50%); /* Centra el menú bajo el botón */
+            transform: translateX(-50%);
             padding: 10px 0;
             z-index: 1001;
         }
-
-        /* Estilos de los enlaces dentro del desplegable */
         .dropdown-content a {
             color: #333333;
             padding: 10px 20px;
             text-decoration: none;
-            display: block; /* Para que ocupen todo el ancho y se pongan uno debajo de otro */
+            display: block;
             font-weight: 500;
             font-size: 0.95em;
             text-align: center;
             transition: background-color 0.2s, color 0.2s;
         }
-
-        /* Efecto al pasar el cursor sobre las semanas específicas */
         .dropdown-content a:hover {
             background-color: #f9f9f9;
             color: #5d0e1e;
         }
-
-        /* Mostrar el menú cuando se hace hover sobre el contenedor principal */
         .dropdown:hover .dropdown-content {
             display: block;
         }
-
-        /* --- ESTILOS DEL CUERPO Y FONDO --- */
         body { 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
             margin: 0;
