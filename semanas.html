@@ -293,10 +293,96 @@ public class PresupuestoFeria {
                 </li>
             </ul>
         </div>
+        
         <div class="proyecto" id="semana2">
             <h3>Semana 2: Proyecto Web Interactivo</h3>
             <p>En esta sesión nos enfocamos en la creación de un proyecto web estructurado. Como ejemplo práctico, desarrollé una interfaz temática ("San Valentín") integrando <strong>HTML5, CSS3 y JavaScript</strong> para gestionar galerías de fotos y componentes animados.</p>
+            
+            <hr style="border: 1px solid rgba(255,255,255,0.2); margin: 20px 0;">
+
+            <h4>Enunciado 03: Venta de Camisas (Práctica Adicional)</h4>
+            <ul>
+                <li><strong>Enunciado del proyecto:</strong> Una tienda ha puesto en oferta la venta de camisas ofreciendo un descuento por temporada de verano denominado 7% + 7%. Se calcula el importe de compra, los descuentos sucesivos y el total a pagar.</li>
+                <li><strong>Diagrama de clases:</strong> 
+                </li>
+                <li><strong>Diseño de la aplicación:</strong>
+                </li>
+                <li><strong>Código de la aplicación:</strong>
+                    <pre style="background: #2b2b2b; padding: 15px; border-radius: 8px; overflow-x: auto; color: #a9b7c6; font-family: monospace;"><code>import java.util.Scanner;
+
+public class VentaCamisas {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Entrada de datos
+        System.out.print("Ingrese el precio de la camisa: ");
+        double precio = scanner.nextDouble();
+        
+        System.out.print("Ingrese la cantidad adquirida: ");
+        int cantidad = scanner.nextInt();
+        
+        // Cálculos correspondientes
+        double importeCompra = precio * cantidad;
+        double primerDescuento = importeCompra * 0.07;
+        double segundoDescuento = (importeCompra - primerDescuento) * 0.07;
+        double descuentoTotal = primerDescuento + segundoDescuento;
+        double importePagar = importeCompra - descuentoTotal;
+        
+        // Salida de resultados
+        System.out.println("\n--- TICKET DE VENTA ---");
+        System.out.printf("Importe de la compra: S/ %.2f\n", importeCompra);
+        System.out.printf("Primer descuento (7%%): S/ %.2f\n", primerDescuento);
+        System.out.printf("Segundo descuento (7%%): S/ %.2f\n", segundoDescuento);
+        System.out.printf("Descuento total: S/ %.2f\n", descuentoTotal);
+        System.out.printf("Importe a pagar: S/ %.2f\n", importePagar);
+        
+        scanner.close();
+    }
+}</code></pre>
+                </li>
+            </ul>
+            <hr style="border: 1px solid rgba(255,255,255,0.2); margin: 20px 0;">
+            <h4>Enunciado 04: Presupuesto de Feria Empresarial (Práctica Adicional)</h4>
+            <ul>
+                <li><strong>Enunciado del proyecto:</strong> Una empresa expondrá sus productos en una feria. Dado un monto total a invertir, el programa determina cuánto gastará la empresa en cada rubro según porcentajes fijos (Alquiler 23%, Transporte 26%, Decoración 21%, etc.).</li>
+                <li><strong>Diagrama de clases:</strong> 
+                </li>
+                <li><strong>Diseño de la aplicación:</strong>
+                </li>
+                <li><strong>Código de la aplicación:</strong>
+                    <pre style="background: #2b2b2b; padding: 15px; border-radius: 8px; overflow-x: auto; color: #a9b7c6; font-family: monospace;"><code>import java.util.Scanner;
+
+public class PresupuestoFeria {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Entrada de datos
+        System.out.print("Ingrese el monto total a invertir en la feria: S/ ");
+        double montoTotal = scanner.nextDouble();
+        
+        // Cálculos de distribución por rubro
+        double alquiler = montoTotal * 0.23;
+        double publicidad = montoTotal * 0.07;
+        double transporte = montoTotal * 0.26;
+        double servicios = montoTotal * 0.12;
+        double decoracion = montoTotal * 0.21;
+        double gastosVarios = montoTotal * 0.11;
+        
+        // Salida de resultados
+        System.out.println("\n--- DISTRIBUCIÓN DEL PRESUPUESTO ---");
+        System.out.printf("Alquiler de espacio (23%%): S/ %.2f\n", alquiler);
+        System.out.printf("Publicidad (7%%): S/ %.2f\n", publicidad);
+        System.out.printf("Transporte (26%%): S/ %.2f\n", transporte);
+        System.out.printf("Servicios feriales (12%%): S/ %.2f\n", servicios);
+        System.out.printf("Decoración (21%%): S/ %.2f\n", decoracion);
+        System.out.printf("Gastos varios (11%%): S/ %.2f\n", gastosVarios);
+        
+        scanner.close();
+    }
+}</code></pre>
+                </li>
+            </ul>
         </div>
-        </div>
+    </div>
 </body>
 </html>
