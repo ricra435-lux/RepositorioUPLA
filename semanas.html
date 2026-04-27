@@ -322,7 +322,7 @@ public class PlanillaVendedor {
 
             <h4>Actividad 02: Presupuesto de Feria Empresarial</h4>
             <ul>
-                <li><strong>Enunciado del proyecto:</strong> Distribución porcentual de una inversión para una feria en diferentes rubros: alquiler, publicidad, transporte, servicios, decoración y gastos varios.</li>
+                <li><strong>Enunciado del proyecto:</strong> Distribución porcentual de una inversión para una feria en diferentes rubros.</li>
                 <li><strong>Código de la aplicación:</strong>
                     <pre style="background: #2b2b2b; padding: 15px; border-radius: 8px; overflow-x: auto; color: #a9b7c6; font-family: monospace;"><code>import java.util.Scanner;
 
@@ -428,6 +428,94 @@ public class SueldoCategorias {
                 </li>
             </ul>
         </div>
+        
+        <div class="proyecto" id="semana3">
+            <h3>Semana 3: Estructuras Condicionales y Obsequios</h3>
+            <p>En esta semana se desarrollan programas utilizando estructuras condicionales (if/else) para la toma de decisiones, aplicando descuentos dinámicos y bonificaciones en forma de obsequios según montos y cantidades de compra.</p>
+            
+            <hr style="border: 1px solid rgba(255,255,255,0.2); margin: 20px 0;">
+
+            <h4>Actividad 01: Venta de Docenas con Descuento y Obsequio</h4>
+            <ul>
+                <li><strong>Enunciado del proyecto:</strong> Cálculo del descuento por cantidad de docenas compradas (>= 10 docenas aplica 20%, sino 10%). Además, se calculan lapiceros de obsequio si el importe a pagar es mayor o igual a S/. 200 (2 lapiceros por cada docena).</li>
+                <li><strong>Código de la aplicación:</strong>
+                    <pre style="background: #2b2b2b; padding: 15px; border-radius: 8px; overflow-x: auto; color: #a9b7c6; font-family: monospace;"><code>import java.util.Scanner;
+
+public class VentaProducto {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Ingrese el precio de la docena: S/ ");
+        double precioDocena = scanner.nextDouble();
+        System.out.print("Ingrese la cantidad de docenas adquiridas: ");
+        int cantidadDocenas = scanner.nextInt();
+        
+        // Cálculos base
+        double importeCompra = precioDocena * cantidadDocenas;
+        
+        // Condicional para porcentaje de descuento
+        double porcentajeDescuento = (cantidadDocenas >= 10) ? 0.20 : 0.10;
+        double importeDescuento = importeCompra * porcentajeDescuento;
+        double importePagar = importeCompra - importeDescuento;
+        
+        // Condicional para obsequio de lapiceros
+        int lapiceros = (importePagar >= 200) ? (2 * cantidadDocenas) : 0;
+        
+        System.out.println("\n--- DETALLE DE COMPRA ---");
+        System.out.printf("Importe de la compra: S/ %.2f\n", importeCompra);
+        System.out.printf("Importe del descuento: S/ %.2f\n", importeDescuento);
+        System.out.printf("Importe a pagar: S/ %.2f\n", importePagar);
+        System.out.println("Lapiceros de obsequio: " + lapiceros);
+        
+        scanner.close();
+    }
+}</code></pre>
+                </li>
+            </ul>
+
+            <hr style="border: 1px solid rgba(255,255,255,0.2); margin: 20px 0;">
+
+            <h4>Actividad 02: Venta de Pasajes Lima - Huancayo</h4>
+            <ul>
+                <li><strong>Enunciado del proyecto:</strong> Una empresa de transportes cubre la ruta Lima - Huancayo. El pasaje cuesta S/. 37.5 para los turnos Mañana y Noche. Se aplica un descuento del 8% si se compran 15 o más pasajes, y 5% si son menos. Además, se regalan 2 caramelos por boleto si el pago supera los S/. 200.</li>
+                <li><strong>Código de la aplicación:</strong>
+                    <pre style="background: #2b2b2b; padding: 15px; border-radius: 8px; overflow-x: auto; color: #a9b7c6; font-family: monospace;"><code>import java.util.Scanner;
+
+public class VentaPasajes {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Ingrese el turno (Mañana/Noche): ");
+        String turno = scanner.next();
+        System.out.print("Ingrese la cantidad de pasajes a comprar: ");
+        int cantidadPasajes = scanner.nextInt();
+        
+        // Precio único para ambos turnos
+        double precioPasaje = 37.5; 
+        double importeCompra = precioPasaje * cantidadPasajes;
+        
+        // Condicional para porcentaje de descuento
+        double porcentajeDescuento = (cantidadPasajes >= 15) ? 0.08 : 0.05;
+        double importeDescuento = importeCompra * porcentajeDescuento;
+        double importePagar = importeCompra - importeDescuento;
+        
+        // Condicional para obsequio de caramelos
+        int caramelos = (importePagar > 200) ? (2 * cantidadPasajes) : 0;
+        
+        System.out.println("\n--- DETALLE DE VENTA DE PASAJES ---");
+        System.out.println("Turno elegido: " + turno);
+        System.out.printf("Importe de la compra: S/ %.2f\n", importeCompra);
+        System.out.printf("Importe del descuento: S/ %.2f\n", importeDescuento);
+        System.out.printf("Importe a pagar: S/ %.2f\n", importePagar);
+        System.out.println("Caramelos de obsequio: " + caramelos);
+        
+        scanner.close();
+    }
+}</code></pre>
+                </li>
+            </ul>
+        </div>
+
     </div>
 </body>
 </html>
