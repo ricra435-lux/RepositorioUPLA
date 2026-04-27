@@ -213,10 +213,6 @@
             <h4>Enunciado 01: Venta de Camisas</h4>
             <ul>
                 <li><strong>Enunciado del proyecto:</strong> Una tienda ha puesto en oferta la venta de camisas ofreciendo un descuento por temporada de verano denominado 7% + 7%. Se calcula el importe de compra, los descuentos sucesivos y el total a pagar.</li>
-                <li><strong>Diagrama de clases:</strong> 
-                </li>
-                <li><strong>Diseño de la aplicación:</strong>
-                </li>
                 <li><strong>Código de la aplicación:</strong>
                     <pre style="background: #2b2b2b; padding: 15px; border-radius: 8px; overflow-x: auto; color: #a9b7c6; font-family: monospace;"><code>import java.util.Scanner;
 
@@ -224,21 +220,18 @@ public class VentaCamisas {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
-        // Entrada de datos
         System.out.print("Ingrese el precio de la camisa: ");
         double precio = scanner.nextDouble();
         
         System.out.print("Ingrese la cantidad adquirida: ");
         int cantidad = scanner.nextInt();
         
-        // Cálculos correspondientes
         double importeCompra = precio * cantidad;
         double primerDescuento = importeCompra * 0.07;
         double segundoDescuento = (importeCompra - primerDescuento) * 0.07;
         double descuentoTotal = primerDescuento + segundoDescuento;
         double importePagar = importeCompra - descuentoTotal;
         
-        // Salida de resultados
         System.out.println("\n--- TICKET DE VENTA ---");
         System.out.printf("Importe de la compra: S/ %.2f\n", importeCompra);
         System.out.printf("Primer descuento (7%%): S/ %.2f\n", primerDescuento);
@@ -254,11 +247,7 @@ public class VentaCamisas {
             <hr style="border: 1px solid rgba(255,255,255,0.2); margin: 20px 0;">
             <h4>Enunciado 02: Presupuesto de Feria Empresarial</h4>
             <ul>
-                <li><strong>Enunciado del proyecto:</strong> Una empresa expondrá sus productos en una feria. Dado un monto total a invertir, el programa determina cuánto gastará la empresa en cada rubro según porcentajes fijos (Alquiler 23%, Transporte 26%, Decoración 21%, etc.).</li>
-                <li><strong>Diagrama de clases:</strong> 
-                </li>
-                <li><strong>Diseño de la aplicación:</strong>
-                </li>
+                <li><strong>Enunciado del proyecto:</strong> Una empresa expondrá sus productos en una feria. Dado un monto total a invertir, el programa determina cuánto gastará la empresa en cada rubro según porcentajes fijos.</li>
                 <li><strong>Código de la aplicación:</strong>
                     <pre style="background: #2b2b2b; padding: 15px; border-radius: 8px; overflow-x: auto; color: #a9b7c6; font-family: monospace;"><code>import java.util.Scanner;
 
@@ -266,11 +255,9 @@ public class PresupuestoFeria {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
-        // Entrada de datos
         System.out.print("Ingrese el monto total a invertir en la feria: S/ ");
         double montoTotal = scanner.nextDouble();
         
-        // Cálculos de distribución por rubro
         double alquiler = montoTotal * 0.23;
         double publicidad = montoTotal * 0.07;
         double transporte = montoTotal * 0.26;
@@ -278,7 +265,6 @@ public class PresupuestoFeria {
         double decoracion = montoTotal * 0.21;
         double gastosVarios = montoTotal * 0.11;
         
-        // Salida de resultados
         System.out.println("\n--- DISTRIBUCIÓN DEL PRESUPUESTO ---");
         System.out.printf("Alquiler de espacio (23%%): S/ %.2f\n", alquiler);
         System.out.printf("Publicidad (7%%): S/ %.2f\n", publicidad);
@@ -295,44 +281,99 @@ public class PresupuestoFeria {
         </div>
         
         <div class="proyecto" id="semana2">
-            <h3>Semana 2: Proyecto Web Interactivo</h3>
-            <p>En esta sesión nos enfocamos en la creación de un proyecto web estructurado. Como ejemplo práctico, desarrollé una interfaz temática ("San Valentín") integrando <strong>HTML5, CSS3 y JavaScript</strong> para gestionar galerías de fotos y componentes animados.</p>
+            <h3>Semana 2: Estructuras Secuenciales y Condicionales</h3>
+            <p>En esta sesión nos enfocamos en la resolución de problemas lógicos y matemáticos aplicados a casos reales de planillas, presupuestos y ventas comerciales.</p>
             
             <hr style="border: 1px solid rgba(255,255,255,0.2); margin: 20px 0;">
 
-            <h4>Enunciado 03: Venta de Camisas (Práctica Adicional)</h4>
+            <h4>Actividad 01: Planilla de Vendedor</h4>
             <ul>
-                <li><strong>Enunciado del proyecto:</strong> Una tienda ha puesto en oferta la venta de camisas ofreciendo un descuento por temporada de verano denominado 7% + 7%. Se calcula el importe de compra, los descuentos sucesivos y el total a pagar.</li>
-                <li><strong>Diagrama de clases:</strong> 
-                </li>
-                <li><strong>Diseño de la aplicación:</strong>
-                </li>
+                <li><strong>Enunciado del proyecto:</strong> Cálculo de la boleta de un vendedor con un sueldo básico de S/. 350.75, una comisión del 5% sobre ventas y un descuento de ley del 15% sobre el sueldo bruto.</li>
                 <li><strong>Código de la aplicación:</strong>
                     <pre style="background: #2b2b2b; padding: 15px; border-radius: 8px; overflow-x: auto; color: #a9b7c6; font-family: monospace;"><code>import java.util.Scanner;
 
-public class VentaCamisas {
+public class PlanillaVendedor {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
-        // Entrada de datos
-        System.out.print("Ingrese el precio de la camisa: ");
-        double precio = scanner.nextDouble();
+        System.out.print("Ingrese el importe total vendido en el mes: S/ ");
+        double totalVendido = scanner.nextDouble();
         
+        double sueldoBasico = 350.75;
+        double comision = totalVendido * 0.05;
+        double sueldoBruto = sueldoBasico + comision;
+        double descuento = sueldoBruto * 0.15;
+        double sueldoNeto = sueldoBruto - descuento;
+        
+        System.out.println("\n--- BOLETA DE PAGO ---");
+        System.out.printf("Sueldo Básico: S/ %.2f\n", sueldoBasico);
+        System.out.printf("Comisión (5%%): S/ %.2f\n", comision);
+        System.out.printf("Sueldo Bruto: S/ %.2f\n", sueldoBruto);
+        System.out.printf("Descuento de Ley (15%%): S/ %.2f\n", descuento);
+        System.out.printf("Sueldo Neto a Pagar: S/ %.2f\n", sueldoNeto);
+        
+        scanner.close();
+    }
+}</code></pre>
+                </li>
+            </ul>
+
+            <hr style="border: 1px solid rgba(255,255,255,0.2); margin: 20px 0;">
+
+            <h4>Actividad 02: Presupuesto de Feria Empresarial</h4>
+            <ul>
+                <li><strong>Enunciado del proyecto:</strong> Distribución porcentual de una inversión para una feria en diferentes rubros: alquiler, publicidad, transporte, servicios, decoración y gastos varios.</li>
+                <li><strong>Código de la aplicación:</strong>
+                    <pre style="background: #2b2b2b; padding: 15px; border-radius: 8px; overflow-x: auto; color: #a9b7c6; font-family: monospace;"><code>import java.util.Scanner;
+
+public class DistribucionFeria {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Ingrese el monto total a invertir: S/ ");
+        double montoTotal = scanner.nextDouble();
+        
+        System.out.println("\n--- GASTOS POR RUBRO ---");
+        System.out.printf("Alquiler de espacio (23%%): S/ %.2f\n", (montoTotal * 0.23));
+        System.out.printf("Publicidad (7%%): S/ %.2f\n", (montoTotal * 0.07));
+        System.out.printf("Transporte (26%%): S/ %.2f\n", (montoTotal * 0.26));
+        System.out.printf("Servicios feriales (12%%): S/ %.2f\n", (montoTotal * 0.12));
+        System.out.printf("Decoración (21%%): S/ %.2f\n", (montoTotal * 0.21));
+        System.out.printf("Gastos varios (11%%): S/ %.2f\n", (montoTotal * 0.11));
+        
+        scanner.close();
+    }
+}</code></pre>
+                </li>
+            </ul>
+
+            <hr style="border: 1px solid rgba(255,255,255,0.2); margin: 20px 0;">
+
+            <h4>Actividad 03: Venta de Camisas (Descuento Sucesivo)</h4>
+            <ul>
+                <li><strong>Enunciado del proyecto:</strong> Cálculo del importe a pagar por camisas aplicando un descuento por temporada de verano denominado 7% + 7% de manera sucesiva.</li>
+                <li><strong>Código de la aplicación:</strong>
+                    <pre style="background: #2b2b2b; padding: 15px; border-radius: 8px; overflow-x: auto; color: #a9b7c6; font-family: monospace;"><code>import java.util.Scanner;
+
+public class DescuentoCamisas {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Ingrese el precio de la camisa: S/ ");
+        double precio = scanner.nextDouble();
         System.out.print("Ingrese la cantidad adquirida: ");
         int cantidad = scanner.nextInt();
         
-        // Cálculos correspondientes
         double importeCompra = precio * cantidad;
-        double primerDescuento = importeCompra * 0.07;
-        double segundoDescuento = (importeCompra - primerDescuento) * 0.07;
-        double descuentoTotal = primerDescuento + segundoDescuento;
+        double descuento1 = importeCompra * 0.07;
+        double descuento2 = (importeCompra - descuento1) * 0.07;
+        double descuentoTotal = descuento1 + descuento2;
         double importePagar = importeCompra - descuentoTotal;
         
-        // Salida de resultados
-        System.out.println("\n--- TICKET DE VENTA ---");
-        System.out.printf("Importe de la compra: S/ %.2f\n", importeCompra);
-        System.out.printf("Primer descuento (7%%): S/ %.2f\n", primerDescuento);
-        System.out.printf("Segundo descuento (7%%): S/ %.2f\n", segundoDescuento);
+        System.out.println("\n--- DETALLE DE COMPRA ---");
+        System.out.printf("Importe de compra: S/ %.2f\n", importeCompra);
+        System.out.printf("Primer descuento (7%%): S/ %.2f\n", descuento1);
+        System.out.printf("Segundo descuento (7%%): S/ %.2f\n", descuento2);
         System.out.printf("Descuento total: S/ %.2f\n", descuentoTotal);
         System.out.printf("Importe a pagar: S/ %.2f\n", importePagar);
         
@@ -341,41 +382,45 @@ public class VentaCamisas {
 }</code></pre>
                 </li>
             </ul>
+
             <hr style="border: 1px solid rgba(255,255,255,0.2); margin: 20px 0;">
-            <h4>Enunciado 04: Presupuesto de Feria Empresarial (Práctica Adicional)</h4>
+
+            <h4>Actividad 04: Sueldo y Bonificación por Categoría e Hijos</h4>
             <ul>
-                <li><strong>Enunciado del proyecto:</strong> Una empresa expondrá sus productos en una feria. Dado un monto total a invertir, el programa determina cuánto gastará la empresa en cada rubro según porcentajes fijos (Alquiler 23%, Transporte 26%, Decoración 21%, etc.).</li>
-                <li><strong>Diagrama de clases:</strong> 
-                </li>
-                <li><strong>Diseño de la aplicación:</strong>
-                </li>
+                <li><strong>Enunciado del proyecto:</strong> Cálculo del sueldo neto aplicando una tarifa por hora según categoría (A o B), una bonificación basada en el número de hijos y un descuento porcentual basado en el sueldo bruto.</li>
                 <li><strong>Código de la aplicación:</strong>
                     <pre style="background: #2b2b2b; padding: 15px; border-radius: 8px; overflow-x: auto; color: #a9b7c6; font-family: monospace;"><code>import java.util.Scanner;
 
-public class PresupuestoFeria {
+public class SueldoCategorias {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
-        // Entrada de datos
-        System.out.print("Ingrese el monto total a invertir en la feria: S/ ");
-        double montoTotal = scanner.nextDouble();
+        System.out.print("Ingrese la categoría del empleado (A o B): ");
+        String categoria = scanner.next().toUpperCase();
+        System.out.print("Ingrese las horas trabajadas: ");
+        double horas = scanner.nextDouble();
+        System.out.print("Ingrese la cantidad de hijos: ");
+        int hijos = scanner.nextInt();
         
-        // Cálculos de distribución por rubro
-        double alquiler = montoTotal * 0.23;
-        double publicidad = montoTotal * 0.07;
-        double transporte = montoTotal * 0.26;
-        double servicios = montoTotal * 0.12;
-        double decoracion = montoTotal * 0.21;
-        double gastosVarios = montoTotal * 0.11;
+        // Determinar tarifa por hora
+        double tarifa = (categoria.equals("A")) ? 45.0 : 37.5;
+        double sueldoBasico = horas * tarifa;
         
-        // Salida de resultados
-        System.out.println("\n--- DISTRIBUCIÓN DEL PRESUPUESTO ---");
-        System.out.printf("Alquiler de espacio (23%%): S/ %.2f\n", alquiler);
-        System.out.printf("Publicidad (7%%): S/ %.2f\n", publicidad);
-        System.out.printf("Transporte (26%%): S/ %.2f\n", transporte);
-        System.out.printf("Servicios feriales (12%%): S/ %.2f\n", servicios);
-        System.out.printf("Decoración (21%%): S/ %.2f\n", decoracion);
-        System.out.printf("Gastos varios (11%%): S/ %.2f\n", gastosVarios);
+        // Determinar bonificación por hijos
+        double bonificacion = (hijos <= 3) ? (hijos * 40.5) : (hijos * 35.0);
+        double sueldoBruto = sueldoBasico + bonificacion;
+        
+        // Determinar descuento
+        double porcentajeDescuento = (sueldoBruto >= 3500) ? 0.135 : 0.10;
+        double descuento = sueldoBruto * porcentajeDescuento;
+        double sueldoNeto = sueldoBruto - descuento;
+        
+        System.out.println("\n--- BOLETA DE PAGO DEL EMPLEADO ---");
+        System.out.printf("Sueldo Básico: S/ %.2f\n", sueldoBasico);
+        System.out.printf("Bonificación por hijos: S/ %.2f\n", bonificacion);
+        System.out.printf("Sueldo Bruto: S/ %.2f\n", sueldoBruto);
+        System.out.printf("Descuento aplicado: S/ %.2f\n", descuento);
+        System.out.printf("Sueldo Neto a Pagar: S/ %.2f\n", sueldoNeto);
         
         scanner.close();
     }
